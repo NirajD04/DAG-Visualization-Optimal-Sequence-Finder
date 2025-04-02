@@ -1,0 +1,250 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Main content layout */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        flex-direction: row;
+    }
+    
+    .visualization-panel {
+        flex: 2;
+    }
+    
+    .control-panel {
+        flex: 1;
+    }
+}
+
+/* Visualization panel */
+.visualization-panel {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.panel-header {
+    padding: 15px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.panel-header p {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+#network-container {
+    height: 500px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.help-text {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+/* Control panel */
+.control-panel {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 12px;
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #7f8c8d;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-button:hover {
+    background-color: #f8f9fa;
+}
+
+.tab-button.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Controls */
+.control-group {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.control-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3498db;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.algorithm-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.algorithm-btn.primary {
+    background-color: #2980b9;
+}
+
+.algorithm-btn.primary:hover {
+    background-color: #1c6ea4;
+}
+
+.algorithm-btn.secondary {
+    background-color: #7f8c8d;
+}
+
+.algorithm-btn.secondary:hover {
+    background-color: #6c7a7a;
+}
+
+/* Results */
+.result-group {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.result-display {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    min-height: 60px;
+}
+
+.result-display .placeholder {
+    color: #95a5a6;
+    font-style: italic;
+}
+
+.sequence-item {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: #e8f4fc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.sequence-arrow {
+    display: inline-block;
+    margin: 0 5px;
+    color: #7f8c8d;
+}
+
+.algorithm-explanation {
+    font-size: 0.9rem;
+}
+
+.algorithm-explanation ul {
+    padding-left: 20px;
+    margin-top: 5px;
+}

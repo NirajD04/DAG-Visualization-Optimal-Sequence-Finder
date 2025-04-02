@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAG Visualization & Optimal Sequence Finder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="/static/vis-network.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DAG Visualization & Optimal Sequence Finder</h1>
+        </header>
+
+        <div class="main-content">
+            <div class="visualization-panel">
+                <div class="panel-header">
+                    <h2>Directed Acyclic Graph</h2>
+                    <p>Visualize task dependencies</p>
+                </div>
+                <div id="network-container"></div>
+                <div class="help-text">
+                    <p>Drag nodes to reposition | Double-click empty space to add a node | Right-click node/edge to remove</p>
+                </div>
+            </div>
+
+            <div class="control-panel">
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="controls">Controls</button>
+                    <button class="tab-button" data-tab="results">Results</button>
+                </div>
+
+                <div class="tab-content active" id="controls">
+                    <h3>Graph Controls</h3>
+                    <div class="control-group">
+                        <label for="node-label">Node Label:</label>
+                        <input type="text" id="node-label" placeholder="Task Name">
+
+                        <label for="node-weight">Weight:</label>
+                        <input type="number" id="node-weight" min="1" max="100" value="5">
+
+                        <button id="add-node-btn">Add Node</button>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="source-node">From Node:</label>
+                        <select id="source-node"></select>
+
+                        <label for="target-node">To Node:</label>
+                        <select id="target-node"></select>
+
+                        <button id="add-edge-btn">Add Edge</button>
+                    </div>
+
+                    <div class="control-group algorithms">
+                        <button id="topo-sort-btn" class="algorithm-btn">Run Topological Sort</button>
+                        <button id="optimal-sequence-btn" class="algorithm-btn primary">Find Optimal Sequence</button>
+                        <button id="reset-btn" class="algorithm-btn secondary">Reset Graph</button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="results">
+                    <h3>Algorithm Results</h3>
+                    
+                    <div class="result-group">
+                        <h4>Topological Sort</h4>
+                        <div id="topo-sort-result" class="result-display">
+                            <p class="placeholder">Run the topological sort algorithm to see results</p>
+                        </div>
+                    </div>
+
+                    <div class="result-group">
+                        <h4>Optimal Sequence (Heuristic)</h4>
+                        <div id="optimal-sequence-result" class="result-display">
+                            <p class="placeholder">Run the optimal sequence algorithm to see results</p>
+                        </div>
+                    </div>
+
+                    <div class="algorithm-explanation">
+                        <h4>Algorithm Explanation</h4>
+                        <p><strong>Topological Sort:</strong> Orders nodes such that for every directed edge (u,v), 
+                        node u comes before node v in the ordering.</p>
+                        
+                        <p><strong>Optimal Sequence:</strong> Uses a heuristic approach that considers:</p>
+                        <ul>
+                            <li>Node weights (higher weights prioritized)</li>
+                            <li>Critical path analysis</li>
+                            <li>Dependency constraints</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
